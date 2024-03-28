@@ -5,7 +5,7 @@ import { useState } from 'react';
 export default function App() {
 
   // Function to fetch data using callbacks
-// Function to fetch data from the API using callbacks
+
 function fetchDataWithCallbacks(callback) {
   fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
@@ -44,7 +44,7 @@ function displayData(data) {
       console.log(`Post ID: ${post.id}`);
       console.log(`Title: ${post.title}`);
       console.log(`Body: ${post.body}`);
-      console.log("---------------------------------------");
+ 
   });
 }
 
@@ -77,7 +77,7 @@ function handleCallback(){
   return (
 <>
      
-      <h1>Data Fetching Demo</h1>
+      <h1>Choose data fetching method</h1>
     <label><input type="radio" name="method" value="callback" onClick={handleCallback}/> Callbacks</label><br />
     <label><input type="radio" name="method" value="promise"  onClick={handleP}/> Promises</label><br/>
     {/* <label><input type="radio" name="method" value="async" onClick={handleAsync}/> Async/Await</label><br/> */}
