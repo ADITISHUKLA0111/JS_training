@@ -81,7 +81,7 @@ function handleCallback(){
     <label><input type="radio" name="method" value="callback" onClick={handleCallback}/> Callbacks</label><br />
     <label><input type="radio" name="method" value="promise"  onClick={handleP}/> Promises</label><br/>
     {/* <label><input type="radio" name="method" value="async" onClick={handleAsync}/> Async/Await</label><br/> */}
-    <button id="fetchData">Fetch Data</button>
+   
     <p>In console data is being fetched</p>
     
  
