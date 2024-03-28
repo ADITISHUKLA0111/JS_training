@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const wordCounts = {};
+    function countOccurrences(text, words) {
+        
+        const wordsSet = new Set(words);
+    
+        // Extract words from the text
+        const extractedWords = text.match(/[a-zA-Z]+/g);
+    
+        if (!extractedWords) {
+            throw new Error("No valid words found in the input text.");
+        }
+    
+        for (const word of extractedWords) {
+            // 	has () Returns true if a value exists in the Set
+            if (wordsSet.has(word.toLowerCase())) {
+                wordCounts[word.toLowerCase()] = (wordCounts[word.toLowerCase()] || 0) + 1;
+            }
+        }
+    
+        return wordCounts;
+    }
+    
+    function getInput(promptMessage) {
+        return prompt(promptMessage).trim();
+        // trim removes whitespace 
+    }
+    
+    function getWordsToCount() {
+        let words = [];
+        while (true) {
+            const word = getInput("Enter a word to count occurrences of (or type 'end' to finish):");
+            if (word.toLowerCase() === 'end') {
+                break;
+            }
+            words.push(word.toLowerCase());
+        }
+        return words;
+    }
+    
+    try {
+        const text = getInput("Enter some text:");
+        const wordsToCount = getWordsToCount();
+    
+        const occurrences = countOccurrences(text, wordsToCount);
+    
+        console.log("Occurrences:",  wordCounts);
+     
+       
+    } catch (error) {
+        console.log("error in catch block");
+    } finally {
+        console.log("No error");
+     
+   
+      
+      
+    }
+    </script>
+</head>
+<body>
+    <h1>JS class</h1>
+  
+    
+   
+</body>
+</html>
