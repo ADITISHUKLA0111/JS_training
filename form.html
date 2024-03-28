@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML + CSS</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Registration form</h1>
+    <form>
+      <input type="text" placeholder="Name" />
+      <br />
+      <br />
+      <input type="number" placeholder="number" />
+      <p>Choose Gender</p>
+      <p>
+        <input type="radio" id="male" value="male" />
+         <label for="male">male</label>
+        <input type="radio" id="female" value="female" />  
+        <label for="female">female</label>
+        <input type="radio" id="other" value="other" />
+        <label for="other"> other</label>
+        <br />
+        <br />
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday" />
+        <label for="cars">Choose a car:</label>
+        <br />
+        <br />
+        <select name="cars" id="cars">
+          <option value="volvo">Choose Transport</option>
+          <option value="volvo">Bike</option>
+          <option value="saab">Car</option>
+          <option value="mercedes">Taxi</option>
+        </select>
+        <br />
+        <br />
+        <input type="checkbox" />
+        <label for="vehicle1"> I accept all T&C</label><br />
+        <br />
+        <button>Submit</button>
+      </p>
+    </form>
+  </body>
+</html>
