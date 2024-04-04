@@ -1,0 +1,15 @@
+.BoxDiv{
+  width: fit-content;
+  height:200px;
+  margin:100px auto;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+
+
+}
+.Reset{
+  width: 50%;
+  align-self: center;
+}
