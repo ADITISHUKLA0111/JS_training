@@ -1,67 +1,83 @@
-import React from "react";
-import { useState } from "react";
+import React, { Component } from "react";
+
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import { blue} from '@mui/material/colors';
 
-
-function Counter() {
-  let [counter, setCounter] = useState(0);
-
-  function handleCounter(count) {
-    let i = counter;
+class Counter extends Component {
+  constructor() {
+    super();
+    this.state = {
+      counter: 0,
+    };
+  }
+  handleCounter(count) {
+    let i = this.state.counter;
     if (count === "dec") {
-      if (i == 0) alert("counter can not be lower than zero");
+      if (i === 0) alert("counter can not be lower than zero");
       else {
         i--;
-        setCounter(i);
+        this.setState({ counter: i });
       }
     } else if (count === "in") {
       i++;
-      setCounter(i);
-    } else setCounter(0);
+      this.setState({ counter: i });
+    } else {
+      i = 0;
+      this.setState({ counter: i });
+    }
   }
-  return (
-    <Box component="div" py={6} sx={{backgroundColor:blue[100]}}>
-      <Paper elevation={3} className="BoxDiv">
-        <Stack direction="column" spacing={2}>
-          <Typography
-            variant="h5"
-            sx={{ color: "black", alignSelf: "center" }}
-            gutterBottom
-          >
-            React Counter
-          </Typography>
-          <Typography
-            variant="h5"
-            sx={{ color: "black", alignSelf: "center" }}
-            gutterBottom
-          >
-            {" "}
-            {counter}
-          </Typography>
-          <Stack spacing={2} direction="row">
-            <Button variant="contained" onClick={() => handleCounter("in")}>
-              Increment
-            </Button>
-            <Button variant="contained" onClick={() => handleCounter("dec")}>
-              Decrement
+  render() {
+    return (
+      <Box component="div">
+        <Paper elevation={3} className="BoxDiv">
+          <Stack direction="column" spacing={2}>
+            <Typography
+              variant="h5"
+              sx={{ color: "black", alignSelf: "center" }}
+              gutterBottom
+            >
+              Class-based Counter
+            </Typography>
+            <Typography
+              variant="h5"
+              sx={{ color: "black", alignSelf: "center" }}
+              gutterBottom
+            >
+              {" "}
+              {this.state.counter}
+            </Typography>
+            <Stack spacing={2} direction="row">
+              <Button
+                variant="contained"
+                color="success"
+                onClick={() => this.handleCounter("in")}
+              >
+                Increment
+              </Button>
+              <Button
+                variant="contained"
+                color="success"
+                onClick={() => this.handleCounter("dec")}
+              >
+                Decrement
+              </Button>
+            </Stack>
+            <Button
+              variant="contained"
+              className="Reset"
+              onClick={() => this.handleCounter("reset")}
+              color="success"
+            >
+              Reset
             </Button>
           </Stack>
-          <Button
-            variant="contained"
-            className="Reset"
-            onClick={() => handleCounter("reset")}
-          >
-            Reset
-          </Button>
-        </Stack>
-      </Paper>
-    </Box>
-  );
+        </Paper>
+      </Box>
+    );
+  }
 }
 
 export default Counter;
